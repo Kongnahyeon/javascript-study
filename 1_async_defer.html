@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>async과 defer</title>
+   <script src="1_main.js"></script>
+   <!-- https://developer.mozilla.org/ko/ : script 공부하기 좋은 사이트 -->
+
+   <!-- 
+      1) <script async src="경로"><script> : async
+         - html을 parsing하다가 header에 있는 script를 fetching(다운) 명령 -> fetching이 끝나면 바로 executing(실행)함 -> 나머지 html parsing진행
+         //parsing이 진행되는 동시에 script가 다운이 완료되면 바로 실행시켜줌 (but, executing이 되야 나머지 html parsing을 진행)
+         //도중 script가 html보다 빨리 열리고, script가 진행이되지 않으면 나머지 html parsing이 늦게 진행되어 페이지자체가 늦게 열리는 경우가 있는 단점이 있음
+         //파일이 순서대로 진행되는게 아닌 다운이 먼저 된 것 부터 무작위 실행 (순서적인 js라면 사용금지!)
+         
+      2) <script defer src="경로"><script> : defer
+         - html parsing하다가 defer을 만나면 fetching(다운)까지만 명령 -> html parsing이 완료된 후 script가 executing(실행)함
+         //전체적으로 다운이 다 된 후 순서대로 파일이 실행 (우리가 정의한 js대로 실행 가능)
+         //header 안에 defer을 사용하는게 제일 효율적인 방법!
+
+   -->
+
+</head>
+
+<body>
+  
+</body>
+
+</html>
